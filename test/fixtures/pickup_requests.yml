@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  company_name: MyString
+  address: MyString
+  items: MyText
+  desired_period: MyString
+  required_documents: MyString
+  notes: MyText
+  status: 1
+  scheduled_at: 2026-10-12 08:43:54
+  driver_name: MyString
+
+two:
+  user: two
+  company_name: MyString
+  address: MyString
+  items: MyText
+  desired_period: MyString
+  required_documents: MyString
+  notes: MyText
+  status: 1
+  scheduled_at: 2026-10-12 08:43:54
+  driver_name: MyString
