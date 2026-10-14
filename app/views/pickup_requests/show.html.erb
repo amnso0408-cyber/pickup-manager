@@ -1,0 +1,14 @@
+<h2>依頼詳細</h2>
+<%= link_to "一覧に戻る", pickup_requests_path %>
+
+<p>会社名: <%=@pickup_request.company_name %></p>
+<p>住所: <%=@pickup_request.address%></p>
+<p>回収希望時期: <%=@pickup_request.desired_period %></p>
+<p>回収品目: <%=@pickup_request.items %></p>
+<p>備考: <%=@pickup_request.notes %></p>
+<p>回収日: <%=@pickup_request.scheduled_at %></p>
+<p>ドライバー名: <%=@pickup_request.driver_name %></p>
+<p>ステータス: <%=@pickup_request.status_i18n %></p>
+
+<%= link_to "編集", edit_pickup_request_path(@pickup_request) %>
+<%= link_to "削除", pickup_request_path(@pickup_request), method: :delete, data: { turbo_confirm: "本当に削除しますか？" } %>

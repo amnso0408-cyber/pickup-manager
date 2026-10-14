@@ -1,0 +1,22 @@
+<h2>粗大回収依頼一覧</h2>
+
+
+
+<table>
+  <tr>
+    <th>会社名</th>
+    <th>回収日時</th>
+    <th>回収品目</th>
+    <th>ステータス</th>
+    <th></th>
+  </tr>
+  <% @pickup_requests.each do |request| %>
+    <tr>
+      <td><%= request.company_name %></td>
+      <td><%= request.scheduled_at %></td>
+      <td><%= request.items %></td>
+      <td><%= request.status_i18n %></td>
+      <td><%= link_to "詳細", pickup_request_path(request) %></td>
+    </tr>
+  <% end %>
+</table>

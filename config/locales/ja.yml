@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      pickup_request: 粗大回収依頼
+    attributes:
+      pickup_request:
+        company_name: 会社名
+        address: 住所
+        items: 回収品目
+        desired_period: 回収希望時期
+        notes: 備考
+        scheduled_at: 回収日
+        driver_name: ドライバー名
+        status: ステータス
+      pickup_request/status:
+        confirmed: 確認中
+        scheduled: 確定
+        completed: 完了
+        canceled: キャンセル

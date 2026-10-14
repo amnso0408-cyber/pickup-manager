@@ -1,0 +1,43 @@
+<%= form_with model: pickup_request do |form| %>
+  <% if pickup_request.errors.any? %>
+    <ul class="errors">
+      <% pickup_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= form.label :company_name, "会社名" %>
+    <%= form.text_field :company_name %>
+  </div>
+  <div>
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :desired_period, "回収希望時期" %>
+    <%= form.text_field :desired_period %>
+  </div>
+  <div>
+    <%= form.label :items, "回収品目" %>
+    <%= form.text_field :items %>
+  </div>
+  <div>
+    <%= form.label :notes, "備考" %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <% if pickup_request.persisted? %>
+    <div>
+      <%= form.label :scheduled_at, "回収日" %>
+      <%= form.datetime_field :scheduled_at %>
+    </div>
+    <div>
+      <%= form.label :driver_name, "ドライバー名" %>
+      <%= form.text_field :driver_name %>
+    </div>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>
