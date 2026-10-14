@@ -45,7 +45,7 @@ end
   private
 
   def pickup_request_params
-    params.require(:pickup_request).permit(:company_name, :address, :items, :desired_period, :notes, :scheduled_at, :driver_name)
+    params.require(:pickup_request).permit(:company_name, :address, :items, :desired_period, :notes, :scheduled_at, :driver_name, :status)
   end
 
 end

@@ -37,6 +37,10 @@
       <%= form.label :driver_name, "ドライバー名" %>
       <%= form.text_field :driver_name %>
     </div>
+    <div>
+      <%= form.label :status, "ステータス" %>
+      <%= form.select :status,PickupRequest.statuses.keys.map { |k| [PickupRequest.human_attribute_name("status.#{k}"), k] } %>
+    </div>
   <% end %>
 
   <%= form.submit %>
