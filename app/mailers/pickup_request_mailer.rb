@@ -8,4 +8,10 @@ class PickupRequestMailer < ApplicationMailer
     @pickup_request = pickup_request
     mail(to: User.pluck(:email), subject: "【粗大回収】新しい依頼が登録されました")
   end
+
+   def updated(pickup_request)
+    @pickup_request = pickup_request
+    mail(to: User.pluck(:email), subject: "【粗大回収】依頼が更新されました")
+  end
+
 end

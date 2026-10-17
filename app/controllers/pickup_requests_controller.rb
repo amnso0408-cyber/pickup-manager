@@ -32,6 +32,7 @@ class PickupRequestsController < ApplicationController
     @pickup_request = PickupRequest.find(params[:id])
 
     if @pickup_request.update(pickup_request_params)
+      PickupRequestMailer.updated(@pickup_request).deliver_now
       redirect_to @pickup_request, notice: "依頼を更新しました"
     else
       render :edit, status: :unprocessable_entity
