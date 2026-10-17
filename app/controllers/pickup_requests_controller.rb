@@ -17,6 +17,7 @@ class PickupRequestsController < ApplicationController
   def create
     @pickup_request = current_user.pickup_requests.build(pickup_request_params)
     if @pickup_request.save
+      PickupRequestMailer.created(@pickup_request).deliver_now
       redirect_to @pickup_request, notice: "依頼を登録しました"
     else
       render :new, status: :unprocessable_entity
