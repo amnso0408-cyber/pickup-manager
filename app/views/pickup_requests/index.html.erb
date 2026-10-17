@@ -1,6 +1,8 @@
 <h2>粗大回収依頼一覧</h2>
 
-
+<% if current_user.sales? %>
+  <%= link_to "新規登録", new_pickup_request_path %>
+<% end %>
 
 <table>
   <tr>

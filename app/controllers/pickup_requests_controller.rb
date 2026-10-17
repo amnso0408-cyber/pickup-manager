@@ -1,5 +1,6 @@
 class PickupRequestsController < ApplicationController
     before_action :authenticate_user!
+    before_action :require_sales, only: [:new, :create, :destroy]
 
   def index
     @pickup_requests = PickupRequest.order(created_at: :desc)
@@ -49,6 +50,12 @@ end
       params.require(:pickup_request).permit(:company_name, :address, :items, :desired_period, :notes, :status)
     else
       params.require(:pickup_request).permit(:scheduled_at, :driver_name)
+    end
+  end
+
+  def require_sales
+    unless current_user.sales?
+      redirect_to pickup_requests_path, alert: "権限がありません"
     end
   end
 end
