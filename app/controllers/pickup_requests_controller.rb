@@ -41,7 +41,9 @@ class PickupRequestsController < ApplicationController
 
 def destroy
   @pickup_request = PickupRequest.find(params[:id])
+  company_name = @pickup_request.company_name
   @pickup_request.destroy
+  PickupRequestMailer.destroyed(company_name).deliver_now
   redirect_to pickup_requests_path, notice: "依頼を削除しました", status: :see_other
 end
 
