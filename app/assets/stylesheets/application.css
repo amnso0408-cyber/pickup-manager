@@ -58,3 +58,51 @@ body {
   padding: 4px 12px;
   cursor: pointer;
 }
+
+/* 一覧 */
+.search-card {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 16px 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.badge-confirmed {
+  background: #fff3cd;
+  color: #7a5c00;
+}
+.badge-scheduled {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.badge-completed {
+  background: var(--main-color-light);
+  color: var(--main-color);
+}
+.badge-canceled {
+  background: #eee;
+  color: #666;
+}

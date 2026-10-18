@@ -4,23 +4,24 @@
   <%= link_to "新規登録", new_pickup_request_path %>
 <% end %>
 
-<%= form_with url: pickup_requests_path, method: :get do |form| %>
-  <%= form.text_field :keyword, value: params[:keyword], placeholder: "会社名・品目" %>
+<div class="search-card">
+  <%= form_with url: pickup_requests_path, method: :get do |form| %>
+    <%= form.text_field :keyword, value: params[:keyword], placeholder: "会社名・品目" %>
 
-  <%= form.label :status, "ステータス" %>
-  <%= form.select :status,[["確認中", "confirmed"],["確定", "scheduled"],["完了", "completed"],["キャンセル","canceled"]],
-  { include_blank: "すべて", selected: params[:status]} %>
+    <%= form.label :status, "ステータス" %>
+    <%= form.select :status,[["確認中", "confirmed"],["確定", "scheduled"],["完了", "completed"],["キャンセル","canceled"]],
+    { include_blank: "すべて", selected: params[:status]} %>
 
-  <%= form.label :from, "回収日" %>
-  <%= form.date_field :from, value:params[:from] %>
-  〜
-  <%= form.date_field :to, value:params[:to] %>
+    <%= form.label :from, "回収日" %>
+    <%= form.date_field :from, value:params[:from] %>
+    〜
+    <%= form.date_field :to, value:params[:to] %>
 
+    <%= form.submit "検索" %>
+  <% end %>
+</div>
 
-  <%= form.submit "検索" %>
-<% end %>
-
-<table>
+<table class="table">
   <tr>
     <th>会社名</th>
     <th>回収日時</th>
@@ -33,7 +34,7 @@
       <td><%= request.company_name %></td>
       <td><%= request.scheduled_at&.strftime("%Y/%m/%d %H:%M") %></td>
       <td><%= request.items %></td>
-      <td><%= request.status_i18n %></td>
+      <td><span class="badge badge-<%= request.status %>"><%= request.status_i18n %></span></td>
       <td><%= link_to "詳細", pickup_request_path(request) %></td>
     </tr>
   <% end %>
