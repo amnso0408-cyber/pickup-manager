@@ -11,6 +11,12 @@ class PickupRequestsController < ApplicationController
     if params[:status].present?
       @pickup_requests = @pickup_requests.where(status: params[:status])
     end
+    if params[:from].present?
+      @pickup_requests = @pickup_requests.where("scheduled_at >= ?", params[:from])
+    end
+    if params[:to].present?
+      @pickup_requests = @pickup_requests.where("scheduled_at <= ?", params[:to].to_date.end_of_day)
+    end
   end
 
   def show

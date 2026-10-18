@@ -11,6 +11,12 @@
   <%= form.select :status,[["確認中", "confirmed"],["確定", "scheduled"],["完了", "completed"],["キャンセル","canceled"]],
   { include_blank: "すべて", selected: params[:status]} %>
 
+  <%= form.label :from, "回収日" %>
+  <%= form.date_field :from, value:params[:from] %>
+  〜
+  <%= form.date_field :to, value:params[:to] %>
+
+
   <%= form.submit "検索" %>
 <% end %>
 
