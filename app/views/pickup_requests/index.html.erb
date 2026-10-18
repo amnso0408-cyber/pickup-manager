@@ -31,7 +31,7 @@
   <% @pickup_requests.each do |request| %>
     <tr>
       <td><%= request.company_name %></td>
-      <td><%= request.scheduled_at %></td>
+      <td><%= request.scheduled_at&.strftime("%Y/%m/%d %H:%M") %></td>
       <td><%= request.items %></td>
       <td><%= request.status_i18n %></td>
       <td><%= link_to "詳細", pickup_request_path(request) %></td>

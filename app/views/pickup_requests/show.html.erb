@@ -6,7 +6,7 @@
 <p>回収希望時期: <%=@pickup_request.desired_period %></p>
 <p>回収品目: <%=@pickup_request.items %></p>
 <p>備考: <%=@pickup_request.notes %></p>
-<p>回収日: <%=@pickup_request.scheduled_at %></p>
+<p>回収日: <%=@pickup_request.scheduled_at&.strftime("%Y/%m/%d %H:%M") %></p>
 <p>ドライバー名: <%=@pickup_request.driver_name %></p>
 <p>ステータス: <%=@pickup_request.status_i18n %></p>
 
