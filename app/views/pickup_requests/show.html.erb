@@ -1,16 +1,25 @@
 <h2>依頼詳細</h2>
-<%= link_to "一覧に戻る", pickup_requests_path %>
 
-<p>会社名: <%=@pickup_request.company_name %></p>
-<p>住所: <%=@pickup_request.address%></p>
-<p>回収希望時期: <%=@pickup_request.desired_period %></p>
-<p>回収品目: <%=@pickup_request.items %></p>
-<p>備考: <%=@pickup_request.notes %></p>
-<p>回収日: <%=@pickup_request.scheduled_at&.strftime("%Y/%m/%d %H:%M") %></p>
-<p>ドライバー名: <%=@pickup_request.driver_name %></p>
-<p>ステータス: <%=@pickup_request.status_i18n %></p>
+<table class="detail-table">
+  <tr><th>会社名</th><td><%= @pickup_request.company_name %></td></tr>
+  <tr><th>住所</th><td><%= @pickup_request.address %></td></tr>
+  <tr><th>回収品目</th><td><%= @pickup_request.items %></td></tr>
+  <tr><th>回収希望時期</th><td><%= @pickup_request.desired_period %></td></tr>
+  <tr><th>備考</th><td><%= @pickup_request.notes %></td></tr>
+  <tr><th>回収日時</th><td><%= @pickup_request.scheduled_at&.strftime("%Y/%m/%d %H:%M") %></td></tr>
+  <tr><th>ドライバー名</th><td><%= @pickup_request.driver_name %></td></tr>
+  <tr>
+    <th>ステータス</th>
+    <td><span class="badge badge-<%= @pickup_request.status%>"><%= @pickup_request.status_i18n %></span></td>
+  </tr>
+</table>
 
-<%= link_to "編集", edit_pickup_request_path(@pickup_request) %>
-<% if current_user.sales? %>
-  <%= button_to "削除", pickup_request_path(@pickup_request), method: :delete, data: { turbo_confirm: "本当に削除しますか？" } %>
-<% end %>
+<div class="actions">
+  <%= link_to "編集", edit_pickup_request_path(@pickup_request), class: "btn" %>
+  <% if current_user.sales? %>
+    <%= button_to "削除", pickup_request_path(@pickup_request), method: :delete, class: "btn btn-danger",
+    data: { turbo_confirm: "本当に削除しますか?" } %>
+  <% end %>
+
+  <%= link_to "一覧に戻る", pickup_requests_path, class: "btn btn-sub" %>
+</div>

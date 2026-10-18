@@ -59,6 +59,30 @@ body {
   cursor: pointer;
 }
 
+.btn {
+  display: inline-block;
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-sub {
+  background: #fff;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.btn-danger {
+  background: #fff;
+  color: #b3261e;
+  border: 1px solid #b3261e;
+}
+
 /* 一覧 */
 .search-card {
   background: #f5f5f5;
@@ -105,4 +129,31 @@ body {
 .badge-canceled {
   background: #eee;
   color: #666;
+}
+
+/*詳細*/
+.detail-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 640px;
+  margin: 16px 0;
+}
+
+.detail-table th {
+  width: 160px;
+  text-align: left;
+  background: var(--main-color-light);
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.detail-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
