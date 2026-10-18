@@ -18,6 +18,13 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+    <div>
+      ログイン中: <%= current_user.name %>(<%= current_user.sales? ? "営業" : "ドライバー部門" %>)
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </div>
+  <% end %>
+
   <p><%= notice %></p>
   <p><%= alert %></p>
   <%= yield %>
