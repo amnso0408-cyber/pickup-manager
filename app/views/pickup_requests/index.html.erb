@@ -1,8 +1,9 @@
-<h2>粗大回収依頼一覧</h2>
-
-<% if current_user.sales? %>
-  <%= link_to "新規登録", new_pickup_request_path %>
-<% end %>
+<div class="page-head">
+  <h2>粗大回収依頼一覧</h2>
+  <% if current_user.sales? %>
+    <%= link_to "新規登録", new_pickup_request_path, class: "btn" %>
+  <% end %>
+</div>
 
 <div class="search-card">
   <%= form_with url: pickup_requests_path, method: :get do |form| %>
@@ -17,7 +18,7 @@
     〜
     <%= form.date_field :to, value:params[:to] %>
 
-    <%= form.submit "検索" %>
+    <%= form.submit "検索", class: "btn" %>
   <% end %>
 </div>
 
