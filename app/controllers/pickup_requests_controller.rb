@@ -4,6 +4,13 @@ class PickupRequestsController < ApplicationController
 
   def index
     @pickup_requests = PickupRequest.order(created_at: :desc)
+    if params[:keyword].present?
+      @pickup_requests = @pickup_requests.where("company_name LIKE ? OR items LIKE ? ",
+      "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+    end
+    if params[:status].present?
+      @pickup_requests = @pickup_requests.where(status: params[:status])
+    end
   end
 
   def show
