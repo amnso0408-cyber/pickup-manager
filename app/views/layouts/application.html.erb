@@ -18,15 +18,20 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <div>
-      ログイン中: <%= current_user.name %>(<%= current_user.sales? ? "営業" : "ドライバー部門" %>)
-      <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-    </div>
-  <% end %>
+    <% if user_signed_in? %>
+      <header class="header">
+        <span class="header-title">粗大回収管理</span>
+        <div class="header-user">
+          ログイン中: <%= current_user.name %>(<%= current_user.sales? ? "営業" : "ドライバー部門" %>)
+          <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-logout" %>
+        </div>
+      </header>
+    <% end %>
 
-  <p><%= notice %></p>
-  <p><%= alert %></p>
+  <div class="container">
+    <p><%= notice %></p>
+    <p><%= alert %></p>
   <%= yield %>
+  </div>
   </body>
 </html>
