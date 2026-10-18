@@ -19,6 +19,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "json", "< 3.0"
 gem "rails-i18n"
+gem "devise-i18n"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
