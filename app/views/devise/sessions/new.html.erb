@@ -22,6 +22,11 @@
     <%= f.submit "ログイン", class: "btn" %>
   <% end %>
 
+  <div class="guest-login">
+    <%= button_to "営業としてゲストログイン", guest_sign_in_sales_path, class: "btn btn-sub" %>
+    <%= button_to "ドライバー部門としてゲストログイン", guest_sign_in_driver_path, class: "btn btn-sub" %>
+  </div>
+
   <div class="auth-links">
     <%= render "devise/shared/links" %>
   </div>

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :pickup_requests
   root "pickup_requests#index"
+  post "guest_sign_in/sales", to: "guest_sessions#sales"
+  post "guest_sign_in/driver", to: "guest_sessions#driver"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
