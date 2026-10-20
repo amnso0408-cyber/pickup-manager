@@ -3,6 +3,8 @@ ja:
     models:
       pickup_request: 粗大回収依頼
     attributes:
+      user:
+        name: 名前
       pickup_request:
         company_name: 会社名
         address: 住所
