@@ -15,5 +15,4 @@ class PickupRequest < ApplicationRecord
   def set_scheduled_status
     self.status = :scheduled if scheduled_at.present? && confirmed?
   end
-
 end

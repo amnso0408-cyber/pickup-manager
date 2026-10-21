@@ -1,6 +1,6 @@
 class PickupRequestsController < ApplicationController
     before_action :authenticate_user!
-    before_action :require_sales, only: [:new, :create, :destroy]
+    before_action :require_sales, only: [ :new, :create, :destroy ]
 
   def index
     @pickup_requests = PickupRequest.order(created_at: :desc)

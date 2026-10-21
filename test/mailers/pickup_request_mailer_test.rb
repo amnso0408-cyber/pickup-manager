@@ -2,10 +2,10 @@ require "test_helper"
 
 class PickupRequestMailerTest < ActionMailer::TestCase
   test "created" do
-    mail = PickupRequestMailer.created
-    assert_equal "Created", mail.subject
-    assert_equal [ "to@example.org" ], mail.to
-    assert_equal [ "from@example.com" ], mail.from
-    assert_match "Hi", mail.body.encoded
+    pickup_request = pickup_requests(:one)
+    mail = PickupRequestMailer.created(pickup_request)
+
+    assert_equal "【粗大回収】新しい依頼が登録されました", mail.subject
+    assert_equal User.pluck(:email), mail.to
   end
 end
