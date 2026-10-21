@@ -57,25 +57,8 @@
 - Git / GitHub
 
 ## ER図
-
-┌──────────────────┐              ┌────────────────────────┐
-│       User       │              │     PickupRequest      │
-├──────────────────┤              ├────────────────────────┤
-│ id: integer      │              │ id: integer            │
-│ email: string    │              │ user_id: integer       │
-│ name: string     │  1        N  │ company_name: string   │
-│ role: integer    │──────────────│ address: string        │
-│ created_at: time │              │ items: text            │
-│ updated_at: time │              │ desired_period: string │
-└──────────────────┘              │ notes: text            │
-                                  │ status: integer        │
-                                  │ scheduled_at: time     │
-                                  │ driver_name: string    │
-                                  │ created_at: time       │
-                                  │ updated_at: time       │
-                                  └────────────────────────┘
+<img width="1497" height="754" alt="image" src="https://github.com/user-attachments/assets/c0a453cc-a6b5-451b-b536-19df2f6c13a3" />
                                   
-
 ## 今後の展望
 
 ### 直近の改善予定
