@@ -18,5 +18,4 @@ class PickupRequestMailer < ApplicationMailer
     @company_name = company_name
     mail(to: User.pluck(:email), subject: "【粗大回収】依頼が削除されました")
   end
-
 end
