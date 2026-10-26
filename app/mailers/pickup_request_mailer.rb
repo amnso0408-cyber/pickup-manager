@@ -6,16 +6,16 @@ class PickupRequestMailer < ApplicationMailer
   #
   def created(pickup_request)
     @pickup_request = pickup_request
-    mail(to: ["delivered@resend.dev"], subject: "【粗大回収】新しい依頼が登録されました")
+    mail(to: [ "delivered@resend.dev" ], subject: "【粗大回収】新しい依頼が登録されました")
   end
 
   def updated(pickup_request)
     @pickup_request = pickup_request
-    mail(to: ["delivered@resend.dev"], subject: "【粗大回収】依頼が更新されました")
+    mail(to: [ "delivered@resend.dev" ], subject: "【粗大回収】依頼が更新されました")
   end
 
   def destroyed(company_name)
     @company_name = company_name
-    mail(to: ["delivered@resend.dev"], subject: "【粗大回収】依頼が削除されました")
+    mail(to: [ "delivered@resend.dev" ], subject: "【粗大回収】依頼が削除されました")
   end
 end
