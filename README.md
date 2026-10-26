@@ -4,8 +4,11 @@
 営業が登録した粗大ごみの回収依頼を、ドライバー部門が回収日時とドライバーを割り当てて管理する、社内向けの回収依頼管理アプリです。依頼の登録・更新・削除はメールで全員に通知されます。
 
 ## スクリーンショット
+### 回収依頼一覧画面
+<img width="736" height="463" alt="粗大ごみ回収依頼一覧画面" src="https://github.com/user-attachments/assets/49d99f51-6a74-42b8-be1e-727d5ed80a11" />
 
-<img width="736" height="463" alt="粗大回収依頼一覧画面" src="https://github.com/user-attachments/assets/49d99f51-6a74-42b8-be1e-727d5ed80a11" />
+### メール通知画面（Resend）
+<img width="1093" height="710" alt="Resendのメール送信履歴画面" src="https://github.com/user-attachments/assets/4b7b1ea1-059b-43f1-b0e4-34b060871bc3" />
 
 ## なぜこれを作ったか
 営業として働く中で、複数の仕事を並行して進めていると、人間である以上、どうしても連絡ミスや対応の忘れが起きてしまうと感じていました。回収の依頼は、営業からドライバー部門へ引き継がれ、日程の調整も必要になるため、連絡の行き違いが起きやすい業務です。
