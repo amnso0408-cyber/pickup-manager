@@ -1,6 +1,6 @@
 # 粗大ごみ回収依頼管理アプリ
 
-## アプリの概要
+## アプリのURL 
 https://pickup-manager-hjxx.onrender.com
 
 ## アプリの概要
